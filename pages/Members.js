@@ -4,7 +4,7 @@ import { Navbar, Footer, Banner, CreatorCard } from '../components';
 import Script from 'next/script';
 import images from '../assets';
 import Image from 'next/image';
-
+import { makeId } from '../utils/makeId';
 
 const Ecosystem = () => {
   const parentRef  = useRef(null);
@@ -46,6 +46,7 @@ const Ecosystem = () => {
                   <CreatorCard
                     key={`creator-${i}`}
                     rank={i}
+                    creatorName={`0x${makeId(3)}...${makeId(4)}`}
                     creatorImage={images[`creator${i}`]}
                     creatorEths={10 - i * 0.534}
                   />

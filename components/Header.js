@@ -3,7 +3,7 @@ import toast, { Toaster } from 'react-hot-toast'
 import { ConnectButton } from '@rainbow-me/rainbowkit'
 import TokenBalance from './TokenBalance'
 import { useAccount } from 'wagmi'
-import Image from 'next/image';
+
 const Header = () => {
     const [tokenBalComp, setTokenBalComp] = useState()
     const { address } = useAccount()
