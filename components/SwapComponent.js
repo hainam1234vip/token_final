@@ -100,7 +100,7 @@ const SwapComponent = () => {
 
   return (
     <div className='eth-card w-[35%] p-4 px-6 rounded-xl'>
-      <div className='flex items-center justify-between py-4 px-1 text-bold'>
+      <div className='flex items-center justify-between py-4 px-1 dark:text-white text-nft-black-1 font-poppins font-semibold'>
         <p>TOKENS SWAP</p>
         <CogIcon className='h-6' />
       </div>
@@ -173,7 +173,7 @@ const SwapComponent = () => {
   }
 
   function getSwapBtnClassName() {
-    let className = 'p-4 w-full my-2 rounded-xl bg-black items-center justify-center'
+    let className = 'p-4 w-full my-2 rounded-xl bg-[#3e710f] items-center justify-center dark:text-white text-nft-black-1 font-poppins font-semibold'
     
     return className
   }
