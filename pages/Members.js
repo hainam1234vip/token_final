@@ -1,6 +1,6 @@
 import { useRef} from 'react';
 import { useTheme, ThemeProvider } from 'next-themes';
-import { Navbar, Footer, Banner, CreatorCard } from '../components';
+import { Navbar, LogoCompany, Banner, CreatorCard } from '../components';
 import Script from 'next/script';
 import images from '../assets';
 import Image from 'next/image';
@@ -67,7 +67,7 @@ const Ecosystem = () => {
         </div>
       </div>
     
-      <Footer />
+      <LogoCompany />
 
       <Script src="https://kit.fontawesome.com/e22d47212d.js" crossOrigin="anonymous" />
     </div>

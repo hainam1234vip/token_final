@@ -1,5 +1,5 @@
 import { ThemeProvider } from 'next-themes';
-import { Navbar, Header, SwapComponent, Footer } from '../components';
+import { Navbar, Header, SwapComponent } from '../components';
 import Script from 'next/script';
 
 

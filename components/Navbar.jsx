@@ -8,14 +8,14 @@ const MenuItems = ({ isMobile, active, setActive }) => {
   const generateLink = (i) => {
     switch (i) {
       case 0: return '/';
-      case 1: return '/Members';
-      case 2: return '/Swap';
+      case 1: return '/Swap';
+      case 2: return '/Members';
       default: return '/';
     }
   };
   return (
     <ul className={`list-none flexCenter flex-row ${isMobile && 'flex-col h-full'}`}>
-      {['Dashboards', 'Members','Swap'].map((item, i) => (
+      {['Exchange','Swap', 'Members',].map((item, i) => (
         <li
           key={i}
           onClick={() => {

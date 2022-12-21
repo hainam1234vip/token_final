@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { TransactionContext } from '../context/TransactionContext';
+import { TransactionContext } from '../utils/TransactionContext';
 
 import { shortenAddress } from '../utils/shortenAddress';
 
@@ -40,7 +40,7 @@ const Transactions = () => {
           </h3>
         ) : (
           <h3 className=" dark:bg-nft-dark bg-white text-4xl text-center my-2">
-            Please connect to your account to see the Latest Transactions
+            Please connect to your wallet to see the Latest Transactions
           </h3>
         )}
 
