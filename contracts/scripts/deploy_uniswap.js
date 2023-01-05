@@ -4,7 +4,7 @@ const main = async () => {
   
     await UniswapContract.deployed();
   
-    console.log("Transactions address: ", UniswapContract.address);
+    console.log("Uniswap address: ", UniswapContract.address);
   };
   
   const runMain = async () => {
@@ -16,6 +16,5 @@ const main = async () => {
       process.exit(1);
     }
   };
-  
   runMain();
   

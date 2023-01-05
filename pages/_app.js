@@ -1,3 +1,6 @@
+// apiKey: 'c757fd8cf1954e83b080504791f91203', infura
+// apiKey: 'TDct-yQ6kBWsLbvpfloxiVfKTQTPFsK9', alchemy
+
 import '../styles/globals.css';
 import '@rainbow-me/rainbowkit/styles.css'
 
@@ -6,13 +9,13 @@ import {
   RainbowKitProvider,
 } from '@rainbow-me/rainbowkit'
 import { chain, configureChains, createClient, WagmiConfig } from 'wagmi'
-import { infuraProvider } from 'wagmi/providers/infura'
+import { infuraProvider, alchemyProvider } from 'wagmi/providers/alchemy'
 
 const { chains, provider } = configureChains(
   [chain.goerli],
   [
-    infuraProvider({
-      apiKey: 'c757fd8cf1954e83b080504791f91203',
+    alchemyProvider({
+      apiKey: 'TDct-yQ6kBWsLbvpfloxiVfKTQTPFsK9',
     }),
   ],
 )

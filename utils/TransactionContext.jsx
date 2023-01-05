@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { ethers } from 'ethers';
-import { contractABI, contractAddress } from '../utils/constants';
+import { contractABI, contractAddress } from '../utils/contract';
 
 export const TransactionContext = React.createContext();
 
@@ -22,7 +22,7 @@ export const TransactionProvider = ({ children }) => {
   const [currentAccount, setCurrentAccount] = useState('');
   const [formData, setFormData] = useState({ addressTo: '', amount: '', message: '' });
   const [isLoading, setIsLoading] = useState('false');
-  const [transactionCount, setTransactionCount] = useState(getFromStorage('transactionCount1'));
+  const [transactionCount, setTransactionCount] = useState(getFromStorage('transactionCount'));
   const [transactions, setTransactions] = useState([]);
 
   const handleChange = (e, name) => {
@@ -78,8 +78,9 @@ export const TransactionProvider = ({ children }) => {
       if (window.ethereum) {
         const transactionsContract = getEthereumContract();
         const currentTransactionCount = await transactionsContract.getTransactionCount();
-
+        curren
         window.localStorage.setItem('transactionCount', currentTransactionCount);
+        
       }
     } catch (error) {
       console.log(error);
@@ -123,9 +124,10 @@ export const TransactionProvider = ({ children }) => {
         await transactionHash.wait();
         setIsLoading(false);
 
+
         const transactionsCount = await transactionContract.getTransactionCount();
         setTransactionCount(transactionsCount.toNumber());
-        
+        window.location.reload();
       }
     } catch (error) {
       console.log(error);

@@ -6,7 +6,7 @@ import {
 } from '../utils/queries'
 
 import { ethers } from 'ethers'
-import toast, { Toaster } from 'react-hot-toast'
+import { Toaster } from 'react-hot-toast'
 
 import { ClipboardIcon, ClipboardCheckIcon } from '@heroicons/react/outline'
 
@@ -14,10 +14,7 @@ const TokenBalance = ({ name, walletAddress }) => {
   const [balance, setBalance] = useState('-')
   const [tokenAddress, setTokenAddress] = useState()
   const [copyIcon, setCopyIcon] = useState({ icon: ClipboardIcon })
-  const [txPending, setTxPending] = useState(false)
-
-  const notifyError = msg => toast.error(msg, { duration: 6000 })
-  const notifySuccess = () => toast.success('Transaction completed.')
+  const [txPending] = useState(false)
 
   useEffect(() => {
     if (name && walletAddress) {
@@ -27,9 +24,9 @@ const TokenBalance = ({ name, walletAddress }) => {
   }, [name, walletAddress])
 
   const  fetchTokenBalance = async () => {
-    const bal = await getTokenBalance(name, walletAddress)
-    const fBal = ethers.utils.formatUnits(bal.toString(), 18)
-    setBalance(fBal.toString())
+    const balance = await getTokenBalance(name, walletAddress)
+    const fBalance = ethers.utils.formatUnits(balance.toString(), 18)
+    setBalance(fBalance.toString())
   }
 
   const  fetchTokenAddress = async () => {

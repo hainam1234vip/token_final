@@ -9,13 +9,12 @@ const MenuItems = ({ isMobile, active, setActive }) => {
     switch (i) {
       case 0: return '/';
       case 1: return '/Swap';
-      case 2: return '/Members';
       default: return '/';
     }
   };
   return (
     <ul className={`list-none flexCenter flex-row ${isMobile && 'flex-col h-full'}`}>
-      {['Exchange','Swap', 'Members',].map((item, i) => (
+      {['Exchange','Swap'].map((item, i) => (
         <li
           key={i}
           onClick={() => {
@@ -39,7 +38,7 @@ const MenuItems = ({ isMobile, active, setActive }) => {
 
 const Navbar = () => {
   const { theme, setTheme } = useTheme();
-  const [active, setActive] = useState('Explore NFTs');
+  const [active, setActive] = useState('');
   const [isOpen, setIsOpen] = useState(false);
 
 

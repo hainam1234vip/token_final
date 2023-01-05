@@ -50,6 +50,7 @@ const SwapComponent = () => {
     setToken: setDestToken,
   }
 
+
   const [srcTokenComp, setSrcTokenComp] = useState()
   const [destTokenComp, setDestTokenComp] = useState()
 
@@ -61,9 +62,11 @@ const SwapComponent = () => {
 
   const { address } = useAccount()
 
+  
+
   useEffect(() => {
     // Handling the text of the submit button
-
+    
     if (!address) setSwapBtnText(CONNECT_WALLET)
     else if (!inputValue || !outputValue) setSwapBtnText(ENTER_AMOUNT)
     else setSwapBtnText(SWAP)
@@ -101,7 +104,7 @@ const SwapComponent = () => {
   return (
     <div className='eth-card w-[35%] p-4 px-6 rounded-xl'>
       <div className='flex items-center justify-between py-4 px-1 dark:text-white text-nft-black-1 font-poppins font-semibold'>
-        <p>TOKENS SWAP</p>
+        <p>TOKENS SWAP</p> 
         <CogIcon className='h-6' />
       </div>
       <div className='relative bg-[#212429] p-4 py-6 rounded-xl mb-2 border-[2px] border-transparent hover:border-zinc-600'>
@@ -121,13 +124,17 @@ const SwapComponent = () => {
         className={getSwapBtnClassName()}
         onClick={() => {
           if (swapBtnText === INCREASE_ALLOWANCE) handleIncreaseAllowance()
-          else if (swapBtnText === SWAP) handleSwap()
+          else if (swapBtnText === SWAP) {
+            handleSwap()
+          }
         }}
       >
         {swapBtnText}
       </button>
 
       {txPending && <TransactionStatus />}
+
+      
 
       <Toaster />
     </div>
@@ -242,7 +249,7 @@ const SwapComponent = () => {
 
   function handleInsufficientAllowance() {
     notifyError(
-      "Insufficient allowance. Click 'Increase allowance' to increase it.",
+      "Insufficient allowance. Click 'Allow contract to access token address'",
     )
     setSwapBtnText(INCREASE_ALLOWANCE)
   }
